@@ -5,11 +5,30 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Rails Basic CRUD</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Home", root_path %></li>
+      <li class="nav-item"><%= link_to "About", about_path %></li>
+    </ul>
+    <ul class="navbar-nav mr-auto navbar-right">
+      <li class="nav-item"><%= link_to "Add Post", new_post_path %></li>
+    </ul>
+</nav>
+
+  <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>
